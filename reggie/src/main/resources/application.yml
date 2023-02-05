@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3307/reggie
+      username: root
+      password: 123456
+
+mybatis-plus:
+  configuration:
+#    开启驼峰命名规则与数据库名和字段相映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-field: isDeleted
+#      1为已经删除
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+#图片绝对路径
+reggie:
+  basePath: C:\Users\hasee\IdeaProjects\springbootProject\reggie\src\main\resources\static\backend\images\food\
